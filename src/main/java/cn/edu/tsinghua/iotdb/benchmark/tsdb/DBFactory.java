@@ -11,6 +11,7 @@ import cn.edu.tsinghua.iotdb.benchmark.tsdb.iotdb.IoTDBSession;
 import cn.edu.tsinghua.iotdb.benchmark.tsdb.kairosdb.KairosDB;
 import cn.edu.tsinghua.iotdb.benchmark.tsdb.timescaledb.TimescaleDB;
 import cn.edu.tsinghua.iotdb.benchmark.tsdb.opentsdb.OpenTSDB;
+import cn.edu.tsinghua.iotdb.benchmark.tsdb.taosdb.TaosDB;
 import java.sql.SQLException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,6 +45,8 @@ public class DBFactory {
         return new FakeDB();
       case Constants.DB_OPENTS:
         return new OpenTSDB();
+      case Constants.DB_TAOSDB:
+        return new TaosDB();
       default:
         LOGGER.error("unsupported database {}", config.DB_SWITCH);
         throw new SQLException("unsupported database " + config.DB_SWITCH);

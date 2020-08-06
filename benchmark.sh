@@ -8,8 +8,8 @@ CLIENT_DB_DATA_PATH_LINE=$(grep "DB_DATA_PATH" $BENCHMARK_HOME/conf/clientSystem
 CLIENT_DB_DATA_PATH=${CLIENT_DB_DATA_PATH_LINE#*=}
 
 #git pull
-rm -rf lib
-mvn clean package -Dmaven.test.skip=true
+#rm -rf lib
+#mvn clean package -Dmaven.test.skip=true
 $BENCHMARK_HOME/bin/startup.sh -cf $BENCHMARK_HOME/conf/config.properties
 
 #touch $CLIENT_DB_DATA_PATH/log_stop_flag
